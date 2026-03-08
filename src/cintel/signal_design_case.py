@@ -70,6 +70,7 @@ OUTPUT_FILE: Final[Path] = ARTIFACTS_DIR / "signals_case.csv"
 
 # === DEFINE THE MAIN FUNCTION ===
 
+
 def main() -> None:
     """Run the pipeline.
 
@@ -155,9 +156,7 @@ def main() -> None:
     # This creates an expression for:
     #     total_latency_ms / requests
     # Again, this is only a calculation recipe so far.
-    calculated_avg_latency: pl.Expr = (
-        pl.col("total_latency_ms") / pl.col("requests")
-    )
+    calculated_avg_latency: pl.Expr = pl.col("total_latency_ms") / pl.col("requests")
 
     # ----------------------------------------------------
     # STEP 2.5: DEFINE THE AVERAGE LATENCY SIGNAL RECIPE
@@ -181,9 +180,7 @@ def main() -> None:
     # This shows that a signal can be:
     # - a new calculation, or
     # - a renamed version of an existing column.
-    throughput_signal_recipe: pl.Expr = (
-        pl.col("requests").alias("throughput")
-    )
+    throughput_signal_recipe: pl.Expr = pl.col("requests").alias("throughput")
 
     # ----------------------------------------------------
     # STEP 2.7: APPLY THE SIGNAL RECIPES TO THE DATAFRAME
@@ -232,7 +229,6 @@ def main() -> None:
     LOG.info("Pipeline executed successfully!")
     LOG.info("========================")
     LOG.info("END main()")
-
 
 
 # === CONDITIONAL EXECUTION GUARD ===

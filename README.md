@@ -91,9 +91,9 @@ open a machine terminal in your `Repos` folder:
 
 ```shell
 # Replace username with YOUR GitHub username.
-git clone https://github.com/username/cintel-02-static-anomalies
+git clone https://github.com/username/cintel-03-signal-design
 
-cd cintel-02-static-anomalies
+cd cintel-03-signal-design
 code .
 ```
 
@@ -103,6 +103,10 @@ code .
 uv self update
 uv python pin 3.14
 uv sync --extra dev --extra docs --upgrade
+
+uvx pre-commit install
+git add -A
+uvx pre-commit run --all-files
 
 uv run python -m cintel.signal_design_case
 
