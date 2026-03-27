@@ -1,7 +1,7 @@
 """
-signal_design_case.py - Project script (example).
+signal_design_brandon.py - Project script (example).
 
-Author: Denise Case
+Author: Brandon Jean-Baptiste
 Date: 2026-03
 
 System Metrics Data
