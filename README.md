@@ -125,6 +125,10 @@ git push -u origin main
 
 </details>
 
+## Professional Modification
+
+I modified the pipeline by adding a new derived signal called `success_rate`, which calculates the proportion of successful requests as `(requests - errors) / requests` when requests are greater than zero. I made this change to add another useful reliability metric alongside `error_rate`, `avg_latency_ms`, and `throughput`. After running the project, I observed that the output artifact included the new `success_rate` column, which made the results easier to interpret.
+
 ## Notes
 
 - Use the **UP ARROW** and **DOWN ARROW** in the terminal to scroll through past commands.

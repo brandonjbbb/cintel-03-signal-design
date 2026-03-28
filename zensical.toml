@@ -8,7 +8,7 @@
 
 [project]
 site_name = "Continuous Intelligence"
-site_url = "https://brandonjbbb.github.io/cintel-03-signal-design/"
+site_url = "https://brandonjbbb.github.io/cintel-03-signal-design"
 repo_url = "https://github.com/brandonjbbb/cintel-03-signal-design"
 repo_name = "brandonjbbb/cintel-03-signal-design"
 site_description = "Continuous Intelligence project documentation"
