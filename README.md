@@ -3,133 +3,28 @@
 [![Python 3.14+](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](#)
 [![MIT](https://img.shields.io/badge/license-see%20LICENSE-yellow.svg)](./LICENSE)
 
-> Professional Python project for continuous intelligence.
+> Professional Python project for continuous intelligence and signal design.
 
-Continuous intelligence systems monitor data streams, detect change, and respond in real time.
-This course builds those capabilities through working projects.
+## Overview
 
-In the age of generative AI, durable skills are grounded in real work:
-setting up a professional environment,
-reading and running code,
-understanding the logic,
-and pushing work to a shared repository.
-Each project follows the structure of professional Python projects.
-We learn by doing.
+This project analyzes system performance data by reading a CSV file of raw operational metrics and transforming it into more useful analytical signals.
 
-## This Project
+The pipeline uses raw columns such as:
+- `requests`
+- `errors`
+- `total_latency_ms`
 
-This project introduces **signal design**.
+and creates derived signals such as:
+- `error_rate`
+- `avg_latency_ms`
+- `throughput`
+- `success_rate`
 
-The goal is to copy this repository,
-set up your environment,
-run the example analysis,
-and explore how useful signals can be derived from raw system metrics.
+These signals make it easier to understand reliability, efficiency, and workload.
 
-You will run the example pipeline, read the code,
-and make small modifications to understand how
-signals are created from raw measurements.
+## What the project does
 
-## Data
+This project reads input data from:
 
-The example pipeline reads system metrics from: `data/system_metrics_case.csv`.
-
-Each row represents a system observation with raw measurements
-such as requests, errors, and total latency.
-The pipeline derives signals such as **error rate** and
-**average latency** from these raw values.
-
-## Working Files
-
-You'll work with just these areas:
-
-- **data/** - it starts with the data
-- **docs/** - tell the story
-- **src/cintel/** - where the magic happens
-- **pyproject.toml** - update authorship & links
-- **zensical.toml** - update authorship & links
-
-## Instructions
-
-Follow the [step-by-step workflow guide](https://denisecase.github.io/pro-analytics-02/workflow-b-apply-example-project/) to complete:
-
-1. Phase 1. **Start & Run**
-2. Phase 2. **Change Authorship**
-3. Phase 3. **Read & Understand**
-4. Phase 4. **Modify**
-5. Phase 5. **Apply**
-
-## Challenges
-
-Challenges are expected.
-Sometimes instructions may not quite match your operating system.
-When issues occur, share screenshots, error messages, and details about what you tried.
-Working through issues is part of implementing professional projects.
-
-## Success
-
-After completing Phase 1. **Start & Run**, you'll have your own GitHub project,
-running on your machine, and running the example will print out:
-
-```shell
-========================
-Pipeline executed successfully!
-========================
-```
-
-And a new file named `project.log` will appear in the project folder.
-
-## Command Reference
-
-The commands below are used in the workflow guide above.
-They are provided here for convenience.
-
-Follow the guide for the **full instructions**.
-
-<details>
-<summary>Show command reference</summary>
-
-### In a machine terminal (open in your `Repos` folder)
-
-After you get a copy of this repo in your own GitHub account,
-open a machine terminal in your `Repos` folder:
-
-```shell
-# Replace username with YOUR GitHub username.
-git clone https://github.com/brandonjbbb/cintel-03-signal-design
-
-cd cintel-03-signal-design
-code .
-```
-
-### In a VS Code terminal
-
-```shell
-uv self update
-uv python pin 3.14
-uv sync --extra dev --extra docs --upgrade
-
-uvx pre-commit install
-git add -A
-uvx pre-commit run --all-files
-
-uv run python -m cintel.signal_design_case
-
-uv run ruff format .
-uv run ruff check . --fix
-uv run zensical build
-
-git add -A
-git commit -m "update"
-git push -u origin main
-```
-
-</details>
-
-## Professional Modification
-
-I modified the pipeline by adding a new derived signal called `success_rate`, which calculates the proportion of successful requests as `(requests - errors) / requests` when requests are greater than zero. I made this change to add another useful reliability metric alongside `error_rate`, `avg_latency_ms`, and `throughput`. After running the project, I observed that the output artifact included the new `success_rate` column, which made the results easier to interpret.
-
-## Notes
-
-- Use the **UP ARROW** and **DOWN ARROW** in the terminal to scroll through past commands.
-- Use `CTRL+f` to find (and replace) text within a file.
+```text
+data/system_metrics_case.csv

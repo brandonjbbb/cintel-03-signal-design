@@ -72,7 +72,7 @@ Signals are created from these measurements to help monitor system behavior.
 
 Using the example as a guide:
 
-1. Copy `src/cintel/signal_design_case.py`.
+1. Copy `src/cintel/signal_design_brandon.py`.
 2. Rename the copy to `src/cintel/signal_design_yourname.py`.
 3. Run your copied file to confirm it executes correctly.
 4. Modify the file by adding **at least one additional signal**.
