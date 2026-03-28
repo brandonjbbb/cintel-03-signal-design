@@ -1,6 +1,6 @@
 # Your Files
 
-Projects include instructor example files that end with `_case`.
+Projects include instructor example files that end with `_brandon`.
 Keep these as working examples.
 
 You will generally copy the instructor file, rename it with your alias,
@@ -31,7 +31,7 @@ In your `README.md`, add a line with the execution command just after the instru
 Use this command to run your file.
 
 ```shell
-uv run python -m cintel.anomaly_detector_case
+uv run python -m cintel.anomaly_detector_brandon
 uv run python -m cintel.anomaly_detector_stellar_analytics
 ```
 
@@ -40,7 +40,7 @@ uv run python -m cintel.anomaly_detector_stellar_analytics
 Copy the instructor data file and rename the copy using your alias.
 
 ```text
-data/static_data_case.csv
+data/static_data_brandon.csv
 data/static_data_stellar_analytics.csv
 ```
 
